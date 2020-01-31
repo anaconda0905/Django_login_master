@@ -1,0 +1,30 @@
+{% extends 'base_accounts.html' %}
+
+{% block title %}Sign up to CEP{% endblock %}
+
+{% block content %}
+  <div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 col-sm-8">
+      <div class="cardnew">
+        <div class="card-body-new">
+          <!-- <span class="fa fa-eercast"></span> -->
+          <h3 class="card-title">Sign up</h3>
+          <form method="post" novalidate>
+            {% csrf_token %}
+            {% include 'includes/form.html' %}
+            <div class="login-check">
+						  <label class="checkbox">
+						    <input type="checkbox" value="true" name="remember_me"><i> </i> Read & Agree To Our Privacy Policy
+						  </label>
+					  </div>
+            
+            <button type="submit" class="btn btn-primary btn-block">Create an account</button>
+          </form>
+        </div>
+        <div class="card-footer text-muted text-center">
+          Already have an account? <a href="{% url 'login' %}">Log in</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

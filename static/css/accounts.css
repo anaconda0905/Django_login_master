@@ -1,0 +1,144 @@
+/*-- slide --*/
+
+@keyframes slideleft {
+  from {
+      background-position: 0%;
+  }
+  to {
+      background-position: 90000%;
+  }
+}
+
+@-webkit-keyframes slideleft {
+  from {
+      background-position: 0%;
+  }
+  to {
+      background-position: 90000%;
+  }
+}
+
+body{
+  background-image: url('../images/bg.jpg');
+  background-repeat: repeat-x;
+  animation: slideleft 20000s infinite linear;
+  -webkit-animation: slideleft 40000s infinite linear;
+  background-size: cover;
+  -webkit-background-size:cover;
+  -moz-background-size:cover; 
+  background-attachment: fixed;
+  position: relative;
+  min-height: 100vh;
+  
+}
+
+
+.bg-layer {
+  background: rgba(0, 0, 0, 0.7);
+  min-height: 130vh;
+}
+/*-- //slide --*/
+
+.welcome{
+    font-size: 45px;
+    color: #fff;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align: center;
+    padding: 1em 0 0.4em 0;
+}
+
+.cardnew{
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 999;
+  padding: 3em 2em;
+  background: rgba(255, 255, 255, 0.04);
+  -webkit-box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
+  box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
+}
+.card-body-new{
+  flex: 1 1 auto;
+  padding: 1.25rem;
+  color:white;
+  /* text-align:center; */
+}
+
+
+.card-body-new span.fa {
+  font-size: 50px;
+  color: #fff;
+  margin-bottom: 1em;
+}
+
+.logo {
+  font-family: 'Peralta', cursive;
+}
+
+.logo a {
+  color: rgba(0,0,0,.9);
+}
+
+.logo a:hover,
+.logo a:active {
+  text-decoration: none;
+}
+
+
+ol, ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  /* margin-block-end: 1em; */
+  margin-inline-start: 0px;
+  /* margin-inline-end: 0px; */
+  padding-inline-start: 40px;
+}
+
+.social ul li {
+  display: inline-block;
+  margin: 0 5px;
+  font-size: 15px;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+.social a.google {
+  background: #dd4b39;
+}
+.social a.facebook {
+  background: #3b5998;
+}
+.social ul li a {
+  background: rgba(255, 255, 255, 0.22);
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  display: block;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+

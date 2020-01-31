@@ -1,0 +1,70 @@
+{% extends 'base_accounts.html' %}
+{% load form_tags widget_tweaks %}
+{% block title %}Log in to Community Engagement Portal{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="cardnew">
+            <div class="card-body-new">
+                <!-- <span class="fa fa-eercast"></span> -->
+                <h3 class="card-title">Log in</h3>
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    {#% include 'includes/form.html' %#}
+                    {% if form.non_field_errors %}
+                      <div class="alert alert-danger" role="alert">
+                        {% for error in form.non_field_errors %}
+                          <p{% if forloop.last %} class="mb-0"{% endif %}>{{ error }}</p>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                    
+                    <div class="form-group">
+                        <label for="{{ form.username.id_for_label }}">Username/Email:</label>
+                        {% render_field form.username class=form.username|input_class %}
+                        {% for error in form.username.errors %}
+                        <div class="invalid-feedback">
+                            {{ error }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="form-group">
+                        {{ form.password.label_tag }}
+                        {% render_field form.password class=form.password|input_class %}
+                        {% for error in form.password.errors %}
+                        <div class="invalid-feedback">
+                            {{ error }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="login-check">
+						 <label class="checkbox"><input type="checkbox" value="true" name="remember_me"><i> </i> Keep me logged in</label>
+					</div>
+                    <button type="submit" class="btn btn-primary btn-block">Log in</button>
+                </form>
+            </div>
+            <div class="card-footer text-muted text-center">
+                New User? <a href="{% url 'signup' %}">Sign up</a>
+            </div>
+
+            <div class="social">
+                <ul>
+                    <li>or login using : </li>
+                    <li><a href="{% url 'social:begin' 'facebook' %}" class="facebook">
+                      <span class="fa fa-facebook"></span></a></li>
+                    <li><a href="{% url 'social:begin' 'google-oauth2'%}" class="google">
+                      <span class="fa fa-google-plus"></span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center py-2">
+            <small>
+                <a href="{% url 'password_reset' %}" class="text-muted">Forgot your password?</a>
+            </small>
+        </div>
+    </div>
+</div>
+{% endblock %}

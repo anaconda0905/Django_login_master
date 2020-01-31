@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block stylesheet %}
+<meta name="keywords" content="Slide Login Form template Responsive, Login form web template, Flat Pricing tables, Flat Drop downs Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+<link href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<script>
+  addEventListener("load", function () {
+    setTimeout(hideURLbar, 0);
+  }, false);
+
+  function hideURLbar() {
+    window.scrollTo(0, 1);
+  }
+</script>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <h1 class="welcome">
+    <a href="{% url 'home' %}">
+      <div class="main-icon">
+				<span class="fa fa-eercast"></span>
+			</div>
+    </a>
+  </h1>
+  {% block content %}
+  {% endblock %}
+</div>
+
+
+{% endblock %}

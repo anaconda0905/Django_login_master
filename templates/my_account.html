@@ -1,0 +1,20 @@
+{% extends 'base_accounts.html' %}
+
+{% block title %}My account{% endblock %}
+
+{% block content %}
+  <div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 col-sm-8">
+      <div class="cardnew">
+        <div class="card-body-new">
+          <h3 class="card-title">My account</h3>
+          <form method="post" novalidate>
+            {% csrf_token %}
+            {% include 'includes/form.html' %}
+            <button type="submit" class="btn btn-primary btn-block">Save changes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
